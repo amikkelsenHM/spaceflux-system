@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spaceflux Template — Waterfall Prototype</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles.css">
+  <style>
+    /* Page-local tweak: tighten gap between controls and chart */
+    .waterfall-tight-gap { margin-top: -80px; }
+    /* Page-local: hide native calendar icon for the Day input */
+    #date { appearance: none; -webkit-appearance: none; background-image: none; }
+    #date::-webkit-calendar-picker-indicator { display: none; }
+    #date::-ms-clear { display: none; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <div class="container px-4 py-8">
+    <!-- Navigation -->
+    <nav class="mb-8">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <a href="/" aria-label="Spaceflux home">
+            <img src="/src/assets/logo.svg" alt="Spaceflux" class="h-[15px] w-auto" />
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="/index.html" class="text-spaceflux-greySecondary hover:text-spaceflux-white transition">Design System</a>
+          <a href="#" class="text-spaceflux-white">Waterfall</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Intro -->
+    <section class="section pt-4">
+      <div class="eyebrow-lg mb-2">Prototype</div>
+      <h1 class="title-2 mb-3">Coverage waterfall</h1>
+      <p class="body max-w-3xl">Interactive waterfall showing how satellites cover the same location on Earth over a day. Hover to inspect a specific time; windows highlight and a card reveals details.</p>
+    </section>
+
+    <!-- Controls -->
+    <section class="section pt-4 pb-0">
+      <div class="card">
+        <div class="flex flex-wrap items-center gap-4">
+          <div class="flex items-center gap-3">
+            <label class="body-sm" style="margin-right: 5px;">Location </label>
+            <select id="location" class="select min-w-[180px]">
+              <option value="london">London (51.5°N, 0.1°W)</option>
+              <option value="rome">Rome (41.9°N, 12.5°E)</option>
+              <option value="tokyo">Tokyo (35.7°N, 139.7°E)</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-3">
+            <label class="body-sm" style="margin-right: 5px;">Day </label>
+            <input id="date" type="date" class="input w-[200px]" />
+          </div>
+          <div class="flex items-center gap-3">
+            <label class="body-sm" style="margin-right: 5px;">Satellites </label>
+            <select id="count" class="select w-[120px]">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section class="section pt-0 waterfall-tight-gap">
+      <div class="card relative overflow-hidden">
+        <div class="flex items-center justify-between mb-4">
+          <div class="eyebrow">WATERFALL PLOT</div>
+          <div class="body-sm text-spaceflux-greySecondary">Hover to inspect a point</div>
+        </div>
+        <div id="chart-container" class="relative">
+          <!-- Canvas for rendering -->
+          <canvas id="waterfall-canvas" class="w-full h-[460px] block"></canvas>
+          <!-- Tooltip card -->
+          <div id="tooltip" class="pointer-events-none absolute hidden">
+            <div class="card p-4 min-w-[240px]">
+              <div class="eyebrow mb-1" id="tt-series">SERIES</div>
+              <div id="tt-title" class="headline-2 mb-1">—</div>
+              <div id="tt-body" class="body-sm text-spaceflux-greySecondary">—</div>
+            </div>
+          </div>
+          <!-- Y axis label -->
+          <div class="absolute left-0 top-1/2 -translate-y-1/2 -rotate-90 origin-left body-sm text-spaceflux-greySecondary select-none">Datetime</div>
+        </div>
+        <!-- X axis label -->
+        <div class="mt-4 text-center body-sm text-spaceflux-greySecondary">Longitude</div>
+        <!-- Legend -->
+        <div id="legend" class="mt-4 flex flex-wrap gap-3 justify-center"></div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/waterfall.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaceflux Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body class="min-h-screen">
+    <div class="container px-4 py-8">
+        <!-- Navigation -->
+        <nav class="mb-12">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="/src/assets/logo.svg" alt="Spaceflux" class="h-[15px] w-auto" />
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/index.html" class="text-spaceflux-white">Design System</a>
+                    <a href="/waterfall.html" class="text-spaceflux-greySecondary hover:text-spaceflux-white transition">Waterfall</a>
+                </div>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Design System Overview -->
+        <section class="section">
+            <h1 class="title-1 mb-2">Design System</h1>
+            <p class="body">Spaceflux tokens, components, and patterns for rapid prototyping.</p>
+        </section>
+
+        <!-- Typography -->
+        <section class="section">
+            <h2 class="section-title mb-8">Typography</h2>
+            <div class="space-y-6">
+                <div>
+                    <div class="eyebrow mb-2">Eyebrow / Architekt</div>
+                    <div class="eyebrow-lg">OPTICAL SPACE INTELLIGENCE</div>
+                </div>
+                <div>
+                    <div class="body-sm text-spaceflux-greySecondary mb-2">Title 1 (80)</div>
+                    <div class="title-1">Optical Space Intelligence</div>
+                </div>
+                <div>
+                    <div class="body-sm text-spaceflux-greySecondary mb-2">Title 2 (60)</div>
+                    <div class="title-2">Real-time, actionable, sovereign</div>
+                </div>
+                <div>
+                    <div class="body-sm text-spaceflux-greySecondary mb-2">Headline 1 (40)</div>
+                    <div class="headline-1">Our Agile Optical Sensor Network</div>
+                </div>
+                <div>
+                    <div class="body-sm text-spaceflux-greySecondary mb-2">Body</div>
+                    <div class="body max-w-3xl">From LEO to GEO, our technology reveals what is happening in space, when it matters most.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Colors -->
+        <section class="section">
+            <h2 class="section-title mb-8">Colors</h2>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                <div class="card text-center"><div class="w-full h-16 rounded-lg mb-2 bg-[color:theme(colors.spaceflux.bg)]"></div><div class="body-sm">bg</div></div>
+                <div class="card text-center"><div class="w-full h-16 rounded-lg mb-2 bg-[color:theme(colors.spaceflux.surface)]"></div><div class="body-sm">surface</div></div>
+                <div class="card text-center"><div class="w-full h-16 rounded-lg mb-2" style="background:#f5eeff"></div><div class="body-sm">white</div></div>
+                <div class="card text-center"><div class="w-full h-16 rounded-lg mb-2" style="background:#9492b4"></div><div class="body-sm">greyFade</div></div>
+                <div class="card text-center"><div class="w-full h-16 rounded-lg mb-2" style="background:#aaa7ba"></div><div class="body-sm">greySecondary</div></div>
+                <div class="card text-center"><div class="w-full h-16 rounded-lg mb-2" style="background:#c09eff"></div><div class="body-sm">iris</div></div>
+            </div>
+        </section>
+
+        <!-- Buttons / Links -->
+        <section class="section">
+            <h2 class="section-title mb-8">Links</h2>
+            <div class="flex flex-wrap items-center gap-6">
+                <a href="#" class="link">Primary link
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#" class="link link-muted">Muted link
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                </a>
+                <span class="badge">Badge</span>
+                <span class="badge-primary">Badge Primary</span>
+            </div>
+        </section>
+
+        <!-- Forms -->
+        <section class="section">
+            <h2 class="section-title mb-8">Forms</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <label class="body-sm">Text input</label>
+                    <input class="input" placeholder="Placeholder" />
+                    <label class="body-sm">Textarea</label>
+                    <textarea class="textarea" placeholder="Write something..."></textarea>
+                </div>
+                <div class="space-y-4">
+                    <label class="body-sm">Select</label>
+                    <select class="select">
+                        <option>Option A</option>
+                        <option>Option B</option>
+                    </select>
+                    <div class="flex items-center gap-4 pt-2">
+                        <label class="switch cursor-pointer">
+                            <input type="checkbox" checked>
+                            <span class="track"></span>
+                            <span class="thumb"></span>
+                        </label>
+                        <span class="body">Switch</span>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <label class="inline-flex items-center gap-2">
+                            <input type="checkbox" class="checkbox">
+                            <span class="body">Checkbox</span>
+                        </label>
+                        <label class="inline-flex items-center gap-2">
+                            <input type="radio" name="r" class="radio">
+                            <span class="body">Radio</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards & Alerts -->
+        <section class="section">
+            <h2 class="section-title mb-8">Cards & Alerts</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <div class="eyebrow mb-2">Card</div>
+                    <div class="headline-2 mb-2">Panel title</div>
+                    <p class="body">This is a card using Spaceflux surface color, radius, and shadow.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="alert-info">Info alert</div>
+                    <div class="alert-success">Success alert</div>
+                    <div class="alert-warning">Warning alert</div>
+                    <div class="alert-danger">Danger alert</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-white/10">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="body">© 2025 Spaceflux Prototype Template.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-spaceflux-greySecondary hover:text-primary transition">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.595 1.028 2.688 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-spaceflux-greySecondary hover:text-primary transition">
+                        <span class="sr-only">Twitter</span>
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

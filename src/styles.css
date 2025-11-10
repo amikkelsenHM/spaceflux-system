@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  @font-face {
+    font-family: 'NB Architekt Std';
+    src: url('/src/fonts/NBArchitektStd-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html { @apply bg-[color:var(--bg,theme(colors.spaceflux.bg))]; }
+  body { @apply antialiased text-[color:theme(colors.spaceflux.white)] bg-[color:theme(colors.spaceflux.bg)]; }
+
+  h1, h2, h3, h4, h5, h6 { @apply leading-tight tracking-tight; }
+  h1 { @apply text-4xl md:text-5xl font-bold; }
+  h2 { @apply text-3xl md:text-4xl font-bold; }
+  h3 { @apply text-2xl md:text-3xl font-semibold; }
+  h4 { @apply text-xl md:text-2xl font-semibold; }
+
+  a { @apply text-spaceflux-white hover:text-white/80 transition-colors; }
+}
+
+@layer components {
+  .eyebrow { @apply font-architekt uppercase tracking-wide text-primary; font-size: 14px; }
+  .eyebrow-lg { @apply font-architekt uppercase tracking-wide text-primary; font-size: 18px; }
+
+  .title-1 { @apply font-sans font-normal text-[80px] leading-tight; }
+  .title-2 { @apply font-sans font-normal text-[60px] leading-tight; }
+  .headline-1 { @apply font-sans font-normal text-[40px] leading-snug; }
+  .headline-2 { @apply font-sans font-normal text-[28px] leading-snug; }
+  .body-big { @apply font-sans text-[20px] leading-[1.24] text-spaceflux-greySecondary; }
+  .body { @apply font-sans text-base leading-relaxed text-spaceflux-greySecondary; }
+  .body-sm { @apply font-sans text-sm leading-[1.24] text-spaceflux-greySecondary; }
+
+  .btn { @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-architekt transition focus:outline-none focus:ring-2 focus:ring-primary/40; }
+  .btn-primary { @apply btn bg-primary text-white hover:bg-primary-light; }
+  .btn-ghost { @apply btn bg-transparent text-spaceflux-white border border-white/10 hover:bg-white/5; }
+
+  /* Text links (button style as link) */
+  .link { @apply inline-flex items-center gap-2 font-architekt text-spaceflux-white underline underline-offset-4 decoration-transparent hover:decoration-current transition; }
+  .link-muted { @apply text-spaceflux-greySecondary hover:text-spaceflux-white; }
+
+  .card { @apply bg-[color:theme(colors.spaceflux.surface)] rounded-2xl shadow-card p-6 border border-white/5; }
+  .section { @apply py-10 md:py-16  ; }
+  .section-title { @apply headline-1; }
+  .section-subtitle { @apply body-big max-w-2xl; }
+
+  /* Inputs */
+  .input { @apply w-full rounded-xl bg-transparent border border-white/15 text-spaceflux-white placeholder-spaceflux-greySecondary px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40; }
+  .select {
+    @apply input pr-10 appearance-none bg-no-repeat;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23aaa7ba' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5.25 7.5L10 12.25L14.75 7.5'/></svg>");
+    background-size: 16px 16px;
+    background-position: right 0.75rem center;
+  }
+  .textarea { @apply input min-h-[120px]; }
+
+  /* Checkboxes & Radios */
+  .checkbox { @apply h-5 w-5 rounded-md border border-white/20 bg-transparent focus:ring-2 focus:ring-primary/40; accent-color: #c09eff; }
+  .radio { @apply h-5 w-5 rounded-full border border-white/20 bg-transparent focus:ring-2 focus:ring-primary/40; accent-color: #c09eff; }
+
+  /* Switch */
+  .switch { @apply relative inline-flex items-center; }
+  .switch input { @apply sr-only; }
+  .switch .track { @apply w-11 h-6 rounded-full bg-white/15 transition-colors; }
+  .switch .thumb { @apply absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-spaceflux-white transition-transform; }
+  .switch input:checked + .track { @apply bg-primary/60; }
+  .switch input:checked + .track + .thumb { transform: translateX(1.25rem); }
+
+  /* Badges */
+  .badge { @apply inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-white/10 text-spaceflux-white; }
+  .badge-primary { @apply badge bg-white/10 text-spaceflux-white; }
+
+  /* Alerts */
+  .alert { @apply rounded-xl p-4 border; }
+  .alert-info { @apply alert border-white/20 bg-white/5 text-spaceflux-white; }
+  .alert-success { @apply alert border-emerald-400/30 bg-emerald-400/10 text-emerald-300; }
+  .alert-warning { @apply alert border-amber-400/30 bg-amber-400/10 text-amber-300; }
+  .alert-danger { @apply alert border-rose-400/30 bg-rose-400/10 text-rose-300; }
+}
