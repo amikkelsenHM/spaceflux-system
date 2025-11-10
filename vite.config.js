@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/spaceflux-system/' : '/',
   server: {
     port: 3000,
     open: true,
@@ -10,4 +11,4 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
   },
-})
+}))
