@@ -1,4 +1,6 @@
+// vite.config.js
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/spaceflux-system/' : '/',
@@ -8,6 +10,12 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'docs',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        waterfall: resolve(__dirname, 'waterfall.html')
+      }
+    },
     assetsDir: 'assets',
     sourcemap: true,
   },
